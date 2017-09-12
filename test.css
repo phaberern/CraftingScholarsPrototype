@@ -1,0 +1,7 @@
+.number {
+	position: absolute;
+	display: inline;
+	left: 0;
+	font-size: smaller;
+	color: grey;
+	}
