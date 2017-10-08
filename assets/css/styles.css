@@ -1,0 +1,14 @@
+#logo {
+	width: 150px;
+	height: auto;
+}
+
+#directions {
+	background-color: black;
+	color: white;
+}
+.section-intro{
+	width: 60%;
+	margin: 0 auto;
+	text-align: center;
+}
