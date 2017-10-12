@@ -1,4 +1,6 @@
 $(document).ready(function(){
+	$("#question-nav").hide();
+	$("#current-question-number").hide();
 	//variables for tracking point of interest events
 	var currQuestion = 0;
 
@@ -9,19 +11,19 @@ $(document).ready(function(){
 		answer : 1
 	},{
 		question : "The main purpose of the opening sentence of the passage is to",
-		choices : ["establish the narrator‚Äôs perspective on a controversy.", "provide context useful in understanding the narrator‚Äôs emotional state.", "offer a symbolic representation of Edward Crimsworth‚Äôs plight.", "contrast the narrator‚Äôs good intentions with his malicious conduct."],
+		choices : ["establish the narratorís perspective on a controversy.", "provide context useful in understanding the narratorís emotional state.", "offer a symbolic representation of Edward Crimsworthís plight.", "contrast the narratorís good intentions with his malicious conduct."],
 		answer : 2
 	},{
-		question : "During the course of the first paragraph, the narrator‚Äôs focus shifts from",
+		question : "During the course of the first paragraph, the narratorís focus shifts from",
 		choices : ["recollection of past confidence to acknowledgment of present self-doubt.", "reflection on his expectations of life as a tradesman to his desire for another job.", "generalization about job dissatisfaction to the specifics of his own situation.", "evaluation of factors making him unhappy to identification of alternatives."],
 		answer : 3
 	},{
-		question : "The references to ‚Äúshade‚Äù and ‚Äúdarkness‚Äù at the end of the first paragraph mainly have which effect?",
-		choices : ["They evoke the narrator‚Äôs sense of dismay.", "They reflect the narrator‚Äôs sinister thoughts.", "They capture the narrator‚Äôs fear of confinement.", "They reveal the narrator‚Äôs longing for rest."],
+		question : "The references to ìshadeî and ìdarknessî at the end of the first paragraph mainly have which effect?",
+		choices : ["They evoke the narratorís sense of dismay.", "They reflect the narratorís sinister thoughts.", "They capture the narratorís fear of confinement.", "They reveal the narratorís longing for rest."],
 		answer : 4
 	},{
-		question : "The passage indicates that Edward Crimsworth‚Äôs behavior was mainly caused by his",
-		choices : ["impatience with the narrator‚Äôs high spirits.", "scorn of the narrator‚Äôs humble background.", "indignation at the narrator‚Äôs rash actions.", "jealousy of the narrator‚Äôs apparent superiority."],
+		question : "The passage indicates that Edward Crimsworthís behavior was mainly caused by his",
+		choices : ["impatience with the narratorís high spirits.", "scorn of the narratorís humble background.", "indignation at the narratorís rash actions.", "jealousy of the narratorís apparent superiority."],
 		answer : 5
 	},{
 		question : "The passage indicates that when the narrator began working for Edward Crimsworth, he viewed Crimsworth as a",
@@ -29,7 +31,7 @@ $(document).ready(function(){
 		answer : 6
 	},{
 		question : "Which choice provides the best evidence for the answer to the previous question?",
-		choices : ["Lines 28-31 (‚Äúthe antipathy... life‚Äù)", "Lines 38-40 (‚ÄúMy southern... irritated him‚Äù)", "Lines 54-56 (‚ÄúDay... slumber‚Äù)", "Lines 61-62 (‚ÄúI had... brother‚Äù)"],
+		choices : ["Lines 28-31 (ìthe antipathy... lifeî)", "Lines 38-40 (ìMy southern... irritated himî)", "Lines 54-56 (ìDay... slumberî)", "Lines 61-62 (ìI had... brotherî)"],
 		answer : 7
 	},{
 		question : "At the end of the second paragraph, the comparisons of abstract qualities to a lynx and a snake mainly have the effect of",
@@ -41,12 +43,27 @@ $(document).ready(function(){
 		answer : 9
 	},{
 		question : "Which choice provides the best evidence for the answer to the previous question?",
-		choices : ["Lines 17-21 (‚ÄúI should... scenes‚Äù)", "Lines 21-23 (‚ÄúI should... lodgings‚Äù)", "Lines 64-67 (‚ÄúThoughts... phrases‚Äù)", "Lines 68-74 (‚ÄúI walked... gleam‚Äù)"],
+		choices : ["Lines 17-21 (ìI should... scenesî)", "Lines 21-23 (ìI should... lodgingsî)", "Lines 64-67 (ìThoughts... phrasesî)", "Lines 68-74 (ìI walked... gleamî)"],
 		answer : 10
 	}];
 
-	//navigating through questions
+	//show questions
 	$("#show-questions").on("click", function(){
+		this.remove();
+		$("#question-nav").show();
+		loadQuestion(currQuestion);
+		$("#current-question-number").show();
+	});
+
+	//load previous question
+	$("#prev-question").on("click", function(){
+		currQuestion--;
+		loadQuestion(currQuestion);
+	});
+
+	//load next question
+	$("#next-question").on("click", function(){
+		currQuestion++;
 		loadQuestion(currQuestion);
 	});
 
@@ -54,15 +71,55 @@ $(document).ready(function(){
 
 		var question = questionArray[currQuestion];
 
-		$("#question-number").html((currQuestion + 1));
+		$("#current-question-number").text((currQuestion + 1));
 
-		$("#question").html(question.question);
+		var $questionForm = $("<form>");
 
-		$("#choices").
+		$questionForm.addClass("reading-question");
+		$questionForm.attr("data-number", currQuestion);
+		$questionForm.text(question.question);
+
+		$("#question-container").html($questionForm);
 
 
+		};
 
+		/*//***********************************LINE NUMBERING***************************************
+		// default line height
+		var refHeight = 18;
 
+		// function declaration
+		var computeLines = function(){
 
-	};
-});
+			//remove previous numbers
+			$(".number").remove();
+			var count = 1;
+
+			//loop through paragraphs
+			$("#passage p").each(function(index){
+
+					//get number of lines in paragraph
+					var position = $(this).position();
+					var paragraphHeight = $(this).height();
+					var lines = (paragraphHeight / refHeight);
+					var lineHeight = (paragraphHeight / lines);
+
+					//loop through lines
+					for(var i = position.top; i < (position.top + paragraphHeight); i+= lineHeight){
+
+							//add the numbering paragraph at absolute position
+							$("<p>", {class: "number"}).text(count++).css("top", i+5).insertBefore($(this));;
+							console.log(i);
+
+						}
+						//add margin to allow space for numbering
+						$(this).css("margin-left", "10px");
+				});
+		};
+
+		$(window).resize(computeLines);
+		computeLines();
+
+		//***********************************END OF LINE NUMBERING***************************************
+*/
+});//END OF DOC READY FUNCTION

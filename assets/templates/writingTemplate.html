@@ -1,19 +1,154 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-  	<title>CraftingScholars Prototype</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-  </head>
-  <body>
-    <h1>Hello, world!</h1>
+<html>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-  </body>
+<head>
+    <title>Crafting Scholars Prototype</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/wireframe.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="nav">
+                <ul>
+                    <li><a href="./readingTemplate.html">Reading</a></li>
+                    <li><a href="./writingTemplate.html">Writing</a></li>
+                    <li><a href="./mathWithCalcTemplate.html">Math - with calculator</a></li>
+                    <li><a href="./mathWithoutCalcTemplate.html">Math - without calculator</a></li>
+                </ul>
+            </div>
+            <div class="section-intro">
+                <img id="crafting-scholars-logo" src="../img/craftingScholarsLogo.png" alt="Crafting Scholars Logo">
+                <h1>Writing and Language Test</h1>
+                <h3>35 MINUTES, 44 QUESTIONS</h3>
+                <p>Turn to Section 2 of your answer sheet to answer the questions in this section.</p>
+            </div>
+            <hr style="height:2px;border:none;color:#333;background-color:#333;">
+            <div class="section-intro">
+                <h5 id="directions">DIRECTIONS</h5>
+                <p>Each passage below is accompanied by a number of questions. For some questions, you will consider how the passage might be revised to improve the expression of ideas. For other questions, you will consider how the passage might be edited to correct errors in sentence structure, usage, or punctuation. A passage or a question may be accompanied by one or more graphics (such as a table or graph) that you will consider as you make revising and editing decisions.
+                </p>
+                <p>Some questions will direct you to an underlined portion of a passage. Other questions will direct you to a location in a passage or ask you to think about the passage as a whole.</p>
+                <p>After reading each passage, choose the answer to each question that most effectively improves the quality of writing in the passage or that makes the passage conform to the conventions of standard written English. Many questions include a “NO CHANGE” option. Choose that option if you think the best choice is to leave the relevant portion of the passage as it is.</p>
+            </div>
+            <hr style="height:2px;border:none;color:#333;background-color:#333;">
+        </div>
+        <!-- END OF HEADER ^^^ ABOVE CAN BE A CONTAINER -->
+        <div class="content">
+            <div class="section-content">
+                <p class="passage-intro"><strong>Questions 1-11 are based on the following passage.</strong></p>
+                <p class="passage"><strong>The Base Borden Aquifer</strong></p>
+                <p>Located about 60 kilometers northwest of Toronto, the aquifer at the Borden experimental site has been repeatedly exposed to a variety of
+                    <span class="question-marker">1</span> <u>pollutants--since 1978,</u> researchers have been running controlled experiments in which they release potentially hazardous chemicals into the groundwater. Often these chemicals in the aquifer
+                    <span class="question-marker">2</span> <u>is excavated</u> before concentrations can reach dangerous levels, but some pollutants are allowed free movement if the researchers determine that the concentrations will ultimately drop back into an environmentally acceptable range.</p>
+                <p>
+                    <span class="question">3</span> <u>This process may seem objectionable, but the experiments provide valuable insights into the behaviour of some of the most dangerous and prevalent groundwater pollutants.</u> Chlorinated solvents, such as TCE and PCE, are the most commonly tested sources of groundwater pollution at the site. These solvents, used in dry-cleaning and other industries, are responsible for a significant portion of the groundwater contamination in North America.
+                    <span class="question">4</span> <u>When the solvents are improperly disposed of, they can seep into the groundwater. Contaminated groundwater causes a variety of health problems, including nervous system damage, liver damage, and cancer.</u></p>
+                <p>Traditional laboratory experiments cannot replicate the variation in geologic features that exists in nature.
+                    <span class="question-marker">5</span> <u>For instance,</u> researchers cannot accurately model the behavior of these contaminants based on laboratory studies. The data gathered at the Borden experimental site allow researchers to make improvements to their models and better predict the movement and concentrations of these hazardous chemicals.
+                    <span class="question-marker">6</span> <u>However, some people are still skeptical of the value of these experiments.</u></p>
+                <p>Researchers at the University of Waterloo conducted the initial experiement at the site in
+                    <span class="question-marker">7</span> <u>1978, they selected</u> the location to perform a salt tracer experiment. The researchers injected chloride ions into the aquifer
+                    <span class="question-marker">8</span> <u>plus then allowed</u> the ions to migrate naturally for months. The results showed that the dispersal of the ions was less
+                    <span class="question-marker">9</span> <u>uniform and, predictable, than</u> had previously been assumed.</p>
+                <p>The unexpected results were
+                    <span class="question-marker">10</span> <u>respected for</u> a breakthrough that demonstrated the value of conducting experiments in the field, and the site was converted into a long-term research facility.</p>
+                <p>For the first decade, the site was used mainly to gain understanding of the transport of the contaminants in an effort to improve mathematical models of dispersion. However, in more recent years, the site has been used to test new technologies aimed at containing or removing contaminants in groundwater.
+                    <span class="question-marker">11</span> The research conducted at the site has directly led to some of the most advanced methods of removing groundwater pollutants in use today. So even though polluting an aquifer does not sound very environmentally conscious, by polluting this particular aquifer under controlled conditions, scientists have been able to come up with more effective methods of removing pollutants from the aquifers that millions of people rely on for safe drinking water every day.</p>
+            </div>
+            <div class="section-questions">
+                <form method="POST" action="#" subject="Writing-Test" enctype="text/plain">
+                    <div class="question">
+                        <p class="question-marker">1</p>
+                        <input type="radio" name="1" value="a"> NO CHANGE
+                        <input type="radio" name="1" value="b"> pollutants, since 1978,
+                        <input type="radio" name="1" value="c"> pollutants, since 1978--
+                        <input type="radio" name="1" value="d"> pollutants. Since 1978:
+                    </div>
+                    <div class="question">
+                        <p class="question-marker">2</p>
+                        <input type="radio" name="2" value="a"> NO CHANGE
+                        <input type="radio" name="2" value="b"> are excavated
+                        <input type="radio" name="2" value="c"> excavate
+                        <input type="radio" name="2" value="d"> was excavated
+                    </div>
+                    <div class="question">
+                        <p class="question-marker">3</p>
+                        <p>Which choice provides the best transition from the previous paragraph to this one?</p>
+                        <input type="radio" name="3" value="a"> NO CHANGE
+                        <input type="radio" name="3" value="b"> Groundwater in the United States is polluted with a variety of harmful chemicals.
+                        <input type="radio" name="3" value="c"> Despite the constant influx of pollution, the water in the aquifer remains remarkably clean.
+                        <input type="radio" name="3" value="d"> Since it is on a Canadian Forces base, very few civilians are exposed to the contaminated water in this aquifer.
+                    </div>
+                    <div class="question">
+                        <p class="question-marker">4</p>
+                        <p>Which choice most effectively combines the underlined sentences?</p>
+                        <input type="radio" name="4" value="a"> When the solvents are improperly disposed of, they can seep into the groundwater; the groundwater pollution caused by this release of solvents is harmful to human health and leads to nervous system damage, liver damage, and cancer.
+                        <input type="radio" name="4" value="b"> When the solvents are improperly disposed of, they can seep into the groundwater, and groundwater contaminated with these solvents causes a variety of health problems, including nervous system damage, liver damage, and cancer.
+                        <input type="radio" name="4" value="c"> When the solvents are improperly disposed of, they can seep into the groundwater, causing a variety of health problems, including nervous system damage, liver damage, and cancer.
+                        <input type="radio" name="4" value="d"> When the solvents are improperly disposed of, they can seep into the groundwater--the result of the groundwater being contaminated with these solvents is a variety of health problems, including nervous system damage, liver damage, and cancer.
+                    </div>
+                    <div class="question">
+                        <p class="question-marker">5</p>
+                        <input type="radio" name="5" value="a"> NO CHANGE
+                        <input type="radio" name="5" value="b"> As a result,
+                        <input type="radio" name="5" value="c"> Although,
+                        <input type="radio" name="5" value="d"> Next,
+                    </div>
+                    <div class="question">
+                        <p class="question-marker">6</p>
+                        <p>Which choice provides the most effective response to a possible relevant counterclaim of the argument in support of the controlled studies a the Borden experimental site?</p>
+                        <input type="radio" name="6" value="a"> NO CHANGE
+                        <input type="radio" name="6" value="b"> Hazardous chemicals should be better regulated to prevent groundwater contamination.
+                        <input type="radio" name="6" value="c"> Traditional laboratory experiments still provide plenty of useful information.
+                        <input type="radio" name="6" value="d"> The researchers remain aware that field studies carry greater risk than laboratory studies, so the risks of each study are carefully examined before any study proceeds.
+                    </div>
+                    <div class="question">
+                        <p class="question-marker">7</p>
+                        <input type="radio" name="7" value="a"> NO CHANGE
+                        <input type="radio" name="7" value="b"> 1978. When they selected
+                        <input type="radio" name="7" value="c"> 1978, selecting
+                        <input type="radio" name="7" value="d"> 1978. Selecting
+                    </div>
+                    <div class="question">
+                        <p class="question-marker">8</p>
+                        <input type="radio" name="8" value="a"> NO CHANGE
+                        <input type="radio" name="8" value="b"> while also allowing
+                        <input type="radio" name="8" value="c"> plus also allowed
+                        <input type="radio" name="8" value="d"> and allowed
+                    </div>
+                    <div class="question">
+                        <p class="question-marker">9</p>
+                        <input type="radio" name="9" value="a"> NO CHANGE
+                        <input type="radio" name="9" value="b"> less uniform and predictable than
+                        <input type="radio" name="9" value="c"> less uniform, and predictable than
+                        <input type="radio" name="9" value="d"> less uniform and predictable than,
+                    </div>
+                    <div class="question">
+                        <p class="question-marker">10</p>
+                        <input type="radio" name="10" value="a"> NO CHANGE
+                        <input type="radio" name="10" value="b"> worshipped as
+                        <input type="radio" name="10" value="c"> recognized as being
+                        <input type="radio" name="10" value="d"> hailed as
+                    </div>
+                    <div class="question">
+                        <p class="question-marker">11</p>
+                        <p>At this point, the author wants to add an example of one of the technologies tested at the Borden site. Which choice best accomplishes this goal?</p>
+                        <input type="radio" name="11" value="a"> The Waterloo barrier, a vertical treatment wall that can be inserted into the ground to disrupt the flow of pollutants and allow contaminants to be removed, is one such innovation that has shown promise here.
+                        <input type="radio" name="11" value="b"> Many of the procedures used to contain chemicals at the Borden site are now in use in industrial sites around the world.
+                        <input type="radio" name="11" value="c"> Edward Sudicky, a professor at the University of Waterloo, published a paper detailing the results of decades worth of experiments conducted by academics from across the globe.
+                        <input type="radio" name="11" value="d"> In 1988, a group of universities in Canada and the United States established a University Consortium Solvents-in-Groundwater Research Program to run these studies.
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- END OF CONTENT ^^^ABOVE CAN BE A CONTAINER -->
+        <div class="footer">
+            <h1><strong>END OF SECTION</strong></h1>
+        </div>
+    </div>
+</body>
+
 </html>
