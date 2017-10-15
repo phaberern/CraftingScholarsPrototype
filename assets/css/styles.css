@@ -1,28 +1,21 @@
-.container{
-	width: 90%;
-	margin: 0 auto;
-}
-
 #crafting-scholars-logo {
 	width: 100px;
 	height: auto;
 }
-
-#directions {
+#math-reference-chart{
+	width: 600px;
+	height: auto;
+}
+.math-question-img{
+	width: 300px;
+	height: auto;
+}
+input[type=radio]{
 	background-color: black;
-	color: white;
 }
-.section-intro{
-	width: 60%;
-	margin: 0 auto;
-	text-align: center;
+.section-intro li{
+	text-align: left;
 }
-.section-content{
-	border-right: .75px solid grey;
-	padding-right: 5px;
-	height: 40%;
-	overflow: auto;
-	}
-.question-marker {
-	display: inline;
+.section-questions li{
+	margin-bottom: 10px;
 }

@@ -1,6 +1,5 @@
 $(document).ready(function(){
 	$("#question-nav").hide();
-	$("#current-question-number").hide();
 	//variables for tracking point of interest events
 	var currQuestion = 0;
 
@@ -47,23 +46,10 @@ $(document).ready(function(){
 		answer : 10
 	}];
 
-	//show questions
+	//navigating through questions
 	$("#show-questions").on("click", function(){
-		this.remove();
+		this.remove(); 
 		$("#question-nav").show();
-		loadQuestion(currQuestion);
-		$("#current-question-number").show();
-	});
-
-	//load previous question
-	$("#prev-question").on("click", function(){
-		currQuestion--;
-		loadQuestion(currQuestion);
-	});
-
-	//load next question
-	$("#next-question").on("click", function(){
-		currQuestion++;
 		loadQuestion(currQuestion);
 	});
 
@@ -71,55 +57,47 @@ $(document).ready(function(){
 
 		var question = questionArray[currQuestion];
 
-		$("#current-question-number").text((currQuestion + 1));
+		$("#question-number").html((currQuestion + 1));
 
-		var $questionForm = $("<form>");
-
-		$questionForm.addClass("reading-question");
-		$questionForm.attr("data-number", currQuestion);
-		$questionForm.text(question.question);
-
-		$("#question-container").html($questionForm);
-
-
+		$("#question").html(question.question);
 		};
 
 		/*//***********************************LINE NUMBERING***************************************
-		// default line height
+		// default line height 
 		var refHeight = 18;
-
+	
 		// function declaration
 		var computeLines = function(){
-
+			
 			//remove previous numbers
 			$(".number").remove();
-			var count = 1;
-
+			var count = 1; 
+			
 			//loop through paragraphs
 			$("#passage p").each(function(index){
-
+				
 					//get number of lines in paragraph
 					var position = $(this).position();
 					var paragraphHeight = $(this).height();
 					var lines = (paragraphHeight / refHeight);
 					var lineHeight = (paragraphHeight / lines);
-
+					
 					//loop through lines
 					for(var i = position.top; i < (position.top + paragraphHeight); i+= lineHeight){
-
+						
 							//add the numbering paragraph at absolute position
 							$("<p>", {class: "number"}).text(count++).css("top", i+5).insertBefore($(this));;
 							console.log(i);
-
+							
 						}
 						//add margin to allow space for numbering
 						$(this).css("margin-left", "10px");
 				});
 		};
-
+		
 		$(window).resize(computeLines);
 		computeLines();
-
+	
 		//***********************************END OF LINE NUMBERING***************************************
 */
 });//END OF DOC READY FUNCTION

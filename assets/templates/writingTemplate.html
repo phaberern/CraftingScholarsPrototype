@@ -1,154 +1,183 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Crafting Scholars Prototype</title>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="../css/reset.css">
-    <link rel="stylesheet" type="text/css" href="../css/wireframe.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 
 <body>
     <div class="container">
+        <!--BEGINNING OF HEADER-->
         <div class="header">
-            <div class="nav">
-                <ul>
-                    <li><a href="./readingTemplate.html">Reading</a></li>
-                    <li><a href="./writingTemplate.html">Writing</a></li>
-                    <li><a href="./mathWithCalcTemplate.html">Math - with calculator</a></li>
-                    <li><a href="./mathWithoutCalcTemplate.html">Math - without calculator</a></li>
-                </ul>
-            </div>
-            <div class="section-intro">
-                <img id="crafting-scholars-logo" src="../img/craftingScholarsLogo.png" alt="Crafting Scholars Logo">
-                <h1>Writing and Language Test</h1>
-                <h3>35 MINUTES, 44 QUESTIONS</h3>
-                <p>Turn to Section 2 of your answer sheet to answer the questions in this section.</p>
-            </div>
-            <hr style="height:2px;border:none;color:#333;background-color:#333;">
-            <div class="section-intro">
-                <h5 id="directions">DIRECTIONS</h5>
-                <p>Each passage below is accompanied by a number of questions. For some questions, you will consider how the passage might be revised to improve the expression of ideas. For other questions, you will consider how the passage might be edited to correct errors in sentence structure, usage, or punctuation. A passage or a question may be accompanied by one or more graphics (such as a table or graph) that you will consider as you make revising and editing decisions.
-                </p>
+            <ul class="nav justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link" href="./readingTemplate.html">Reading</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./writingTemplate.html">Writing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./mathNoCalcTemplate.html">Math No Calc</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./mathCalcTemplate.html">Math</a>
+                </li>
+            </ul>
+            <div class="section-intro text-center">
+                <img id="crafting-scholars-logo" src="../img/craftingScholarsLogo.png" alt="craftingScholarsLogo">
+                <h1 class="section-title">Writing and Language Test</h1>
+                <p>35 MINUTES, 44 QUESTIONS</p>
+                <hr>
+                <h5>DIRECTIONS</h5>
+                <p>Each passage below is accompanied by a number of questions. For some questions, you will consider how the passage might be revised to improve the expression of ideas. For other questions, you will consider how the passage might be edited to correct errors in sentence structure, usage, or punctuation. A passage or a question may be accompanied by one or more graphics (such as a table or graph) that you will consider as you make revising and editing decisions.</p>
                 <p>Some questions will direct you to an underlined portion of a passage. Other questions will direct you to a location in a passage or ask you to think about the passage as a whole.</p>
-                <p>After reading each passage, choose the answer to each question that most effectively improves the quality of writing in the passage or that makes the passage conform to the conventions of standard written English. Many questions include a “NO CHANGE” option. Choose that option if you think the best choice is to leave the relevant portion of the passage as it is.</p>
+                <p>After reading each passage, choose the answer to each question that most effectively improves the quality of writing in the passage or that makes the passage conform to the conventions of standard written English. Many questions include a
+                    <q>NO CHANGE</q> option. Choose that option if you think the best choice is to leave the relevant portion of the passage as it is.</p>
+                <hr>
             </div>
-            <hr style="height:2px;border:none;color:#333;background-color:#333;">
         </div>
-        <!-- END OF HEADER ^^^ ABOVE CAN BE A CONTAINER -->
+        <!--END OF HEADER-->
+        <!--BEGINNING OF CONTENT-->
         <div class="content">
             <div class="section-content">
-                <p class="passage-intro"><strong>Questions 1-11 are based on the following passage.</strong></p>
-                <p class="passage"><strong>The Base Borden Aquifer</strong></p>
-                <p>Located about 60 kilometers northwest of Toronto, the aquifer at the Borden experimental site has been repeatedly exposed to a variety of
-                    <span class="question-marker">1</span> <u>pollutants--since 1978,</u> researchers have been running controlled experiments in which they release potentially hazardous chemicals into the groundwater. Often these chemicals in the aquifer
-                    <span class="question-marker">2</span> <u>is excavated</u> before concentrations can reach dangerous levels, but some pollutants are allowed free movement if the researchers determine that the concentrations will ultimately drop back into an environmentally acceptable range.</p>
-                <p>
-                    <span class="question">3</span> <u>This process may seem objectionable, but the experiments provide valuable insights into the behaviour of some of the most dangerous and prevalent groundwater pollutants.</u> Chlorinated solvents, such as TCE and PCE, are the most commonly tested sources of groundwater pollution at the site. These solvents, used in dry-cleaning and other industries, are responsible for a significant portion of the groundwater contamination in North America.
-                    <span class="question">4</span> <u>When the solvents are improperly disposed of, they can seep into the groundwater. Contaminated groundwater causes a variety of health problems, including nervous system damage, liver damage, and cancer.</u></p>
-                <p>Traditional laboratory experiments cannot replicate the variation in geologic features that exists in nature.
-                    <span class="question-marker">5</span> <u>For instance,</u> researchers cannot accurately model the behavior of these contaminants based on laboratory studies. The data gathered at the Borden experimental site allow researchers to make improvements to their models and better predict the movement and concentrations of these hazardous chemicals.
-                    <span class="question-marker">6</span> <u>However, some people are still skeptical of the value of these experiments.</u></p>
-                <p>Researchers at the University of Waterloo conducted the initial experiement at the site in
-                    <span class="question-marker">7</span> <u>1978, they selected</u> the location to perform a salt tracer experiment. The researchers injected chloride ions into the aquifer
-                    <span class="question-marker">8</span> <u>plus then allowed</u> the ions to migrate naturally for months. The results showed that the dispersal of the ions was less
-                    <span class="question-marker">9</span> <u>uniform and, predictable, than</u> had previously been assumed.</p>
-                <p>The unexpected results were
-                    <span class="question-marker">10</span> <u>respected for</u> a breakthrough that demonstrated the value of conducting experiments in the field, and the site was converted into a long-term research facility.</p>
-                <p>For the first decade, the site was used mainly to gain understanding of the transport of the contaminants in an effort to improve mathematical models of dispersion. However, in more recent years, the site has been used to test new technologies aimed at containing or removing contaminants in groundwater.
-                    <span class="question-marker">11</span> The research conducted at the site has directly led to some of the most advanced methods of removing groundwater pollutants in use today. So even though polluting an aquifer does not sound very environmentally conscious, by polluting this particular aquifer under controlled conditions, scientists have been able to come up with more effective methods of removing pollutants from the aquifers that millions of people rely on for safe drinking water every day.</p>
-            </div>
-            <div class="section-questions">
-                <form method="POST" action="#" subject="Writing-Test" enctype="text/plain">
-                    <div class="question">
-                        <p class="question-marker">1</p>
-                        <input type="radio" name="1" value="a"> NO CHANGE
-                        <input type="radio" name="1" value="b"> pollutants, since 1978,
-                        <input type="radio" name="1" value="c"> pollutants, since 1978--
-                        <input type="radio" name="1" value="d"> pollutants. Since 1978:
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="section-passage">
+                            <p>Questions 1-11 are based on the following passage.</p>
+                            <p>Librarians Help Navigate in the Digital Age</p>
+                            <p>In recent years, public libraries in the United States have experienced <span class="question-marker">1</span><u>reducing</u> in their operating funds due to cuts imposed at the federal, state, and local government levels.<span class="question-marker">2</span><u>However,</u> library staffing has been cut by almost four percent since 2008, and the demand for librarians continues to decrease, even though half of public libraries report that they have an insufficient number of staff to meet their patrons&#39 needs.</p>
+                            <p>Employment in all job sectors in the United States is projected to grow by fourteen percent over the next decade, yet the expected growth rate for librarians is predicted to be only seven percent, or half of the overall rate. This trend, combined with the increasing accessibility of information via the Internet,<span class="question-marker">3</span><u>has</u> led some to claim that librarianship is in decline as a profession. As public libraries adapt to rapid technological advances in information distribution, librarians&#39; roles are actually expanding.</p>
+                            <p>The share of library materials that is in nonprint formats <span class="question-marker">4</span> is increasing steadily; in 2010, at least 18.5 million e-books were available <span class="question-marker">5</span><u>for them to circulate.</u> As a result, librarians must now be proficient curators of electronic information, compiling, <span class="question-marker">6</span><u>catalog,</u> and updating these collections. But perhaps even more importantly, librarians function as first responders for their communities&#39; computer needs. Since one of the fastest growing library services is public access computer use, there is great demand for computer instruction.<span class="question-marker">7</span><u>In fact, librarians&#39; training now includes courses on research and Internet search methods. Many of whom teach classes in Internet navigation, database and software use, and digital information literacy.</u> While these classes are particularly helpful to young students developing basic research skills, <span class="question-marker">8</span><u>but</u> adult patrons can also benefit from librarian assistance in that they can acquire job-relevant computer skills.<span class="question-marker">9</span><u>Free to all who utilize their services,</u> public libraries and librarians are especially valuable, because they offer free resources that may be difficult to find elsewhere, such as help with online job searches as well as resume and job material development. An overwhelming number of public libraries also report that they provide help with electronic government resources related to income taxes,<span class="question-marker">10</span><u>law troubles,</u> and retirement programs.</p>
+                            <p>In sum, the Internet does not replace the need for librarians, and librarians are hardly obsolete.<span class="question-marker">11</span><u>Like books, librarians have been around for a long time, but the Internet is extremely useful for many types of research.</u></p>
+                        </div>
                     </div>
-                    <div class="question">
-                        <p class="question-marker">2</p>
-                        <input type="radio" name="2" value="a"> NO CHANGE
-                        <input type="radio" name="2" value="b"> are excavated
-                        <input type="radio" name="2" value="c"> excavate
-                        <input type="radio" name="2" value="d"> was excavated
+                    <div class="col-md-5">
+                        <div class="section-questions">
+                            <ol>
+                                <li>
+                                    <p></p>
+                                    <input type="radio" name="q1" value="a">NO CHANGE
+                                    <br>
+                                    <input type="radio" name="q1" value="b">reductions
+                                    <br>
+                                    <input type="radio" name="q1" value="c">deducting
+                                    <br>
+                                    <input type="radio" name="q1" value="d">deducts
+                                    <br>
+                                </li>
+                                <li>
+                                    <p></p>
+                                    <input type="radio" name="q2" value="a">NO CHANGE
+                                    <br>
+                                    <input type="radio" name="q2" value="b">Consequently,
+                                    <br>
+                                    <input type="radio" name="q2" value="c">Nevertheless,
+                                    <br>
+                                    <input type="radio" name="q2" value="d">Previously,
+                                    <br>
+                                </li>
+                                <li>
+                                    <p></p>
+                                    <input type="radio" name="q3" value="a">NO CHANGE
+                                    <br>
+                                    <input type="radio" name="q3" value="b">have
+                                    <br>
+                                    <input type="radio" name="q3" value="c">which have
+                                    <br>
+                                    <input type="radio" name="q3" value="d">which has
+                                    <br>
+                                </li>
+                                <li>
+                                    <p>At this point, the writer is considering adding the following information.
+                                        <br> &#196;e-books, audio and video materials, and online journals&#196;
+                                        <br>Should the writer make this addition here?</p>
+                                    <input type="radio" name="q4" value="a"> Yes, because it provides specific examples of the materials discussed in the sentence.
+                                    <br>
+                                    <input type="radio" name="q4" value="b">Yes, because it illustrates the reason for the increase mentioned later in the sentence.
+                                    <br>
+                                    <input type="radio" name="q4" value="c">No, because it interrupts the flow of the sentence by supplying irrelevant information.
+                                    <br>
+                                    <input type="radio" name="q4" value="d"> No, because it weakens the focus of the passage by discussing a subject other than librarians.
+                                    <br>
+                                </li>
+                                <li>
+                                    <p></p>
+                                    <input type="radio" name="q5" value="a">NO CHANGE
+                                    <br>
+                                    <input type="radio" name="q5" value="b"> to be circulated by them.
+                                    <br>
+                                    <input type="radio" name="q5" value="c">for their circulating.
+                                    <br>
+                                    <input type="radio" name="q5" value="d">for circulation.
+                                    <br>
+                                </li>
+                                <li>
+                                    <p></p>
+                                    <input type="radio" name="q6" value="a">NO CHANGE
+                                    <br>
+                                    <input type="radio" name="q6" value="b">librarians cataloging,
+                                    <br>
+                                    <input type="radio" name="q6" value="c">to catalog,
+                                    <br>
+                                    <input type="radio" name="q6" value="d">cataloging
+                                    <br>
+                                </li>
+                                <li>
+                                    <p>Which choice most effectively combines the underlined sentences?</p>
+                                    <input type="radio" name="q7" value="a">In fact, librarians&#39; training now includes courses on research and Internet search methods&#59; many librarians teach classes in Internet navigation, database and software use, and digital information literacy is taught by them.
+                                    <br>
+                                    <input type="radio" name="q7" value="b"> In fact, many librarians, whose training now includes courses on research and Internet search methods, teach classes in Internet navigation, database and software use, and digital information literacy.
+                                    <br>
+                                    <input type="radio" name="q7" value="c">Training now includes courses on research and Internet search methods&#59; many librarians, in fact, are teaching classes in Internet navigation, database and software use, and digital information literacy.
+                                    <br>
+                                    <input type="radio" name="q7" value="d">Including courses on research and Internet search methods in their training is, in fact, why many librarians teach classes in Internet navigation, database and software use, and digital information literacy.
+                                    <br>
+                                </li>
+                                <li>
+                                    <p></p>
+                                    <input type="radio" name="q8" value="a">NO CHANGE
+                                    <br>
+                                    <input type="radio" name="q8" value="b">and
+                                    <br>
+                                    <input type="radio" name="q8" value="c">for
+                                    <br>
+                                    <input type="radio" name="q8" value="d">DELETE the underlined portion.
+                                    <br>
+                                </li>
+                                <li>
+                                    <p>Which choice most effectively sets up the examples given at the end of the sentence?</p>
+                                    <input type="radio" name="q9" value="a">NO CHANGE
+                                    <br>
+                                    <input type="radio" name="q9" value="b">During periods of economic recession,
+                                    <br>
+                                    <input type="radio" name="q9" value="c">Although their value cannot be measured,
+                                    <br>
+                                    <input type="radio" name="q9" value="d">When it comes to the free services libraries provide,
+                                    <br>
+                                </li>
+                            </ol>
+                        </div>
                     </div>
-                    <div class="question">
-                        <p class="question-marker">3</p>
-                        <p>Which choice provides the best transition from the previous paragraph to this one?</p>
-                        <input type="radio" name="3" value="a"> NO CHANGE
-                        <input type="radio" name="3" value="b"> Groundwater in the United States is polluted with a variety of harmful chemicals.
-                        <input type="radio" name="3" value="c"> Despite the constant influx of pollution, the water in the aquifer remains remarkably clean.
-                        <input type="radio" name="3" value="d"> Since it is on a Canadian Forces base, very few civilians are exposed to the contaminated water in this aquifer.
-                    </div>
-                    <div class="question">
-                        <p class="question-marker">4</p>
-                        <p>Which choice most effectively combines the underlined sentences?</p>
-                        <input type="radio" name="4" value="a"> When the solvents are improperly disposed of, they can seep into the groundwater; the groundwater pollution caused by this release of solvents is harmful to human health and leads to nervous system damage, liver damage, and cancer.
-                        <input type="radio" name="4" value="b"> When the solvents are improperly disposed of, they can seep into the groundwater, and groundwater contaminated with these solvents causes a variety of health problems, including nervous system damage, liver damage, and cancer.
-                        <input type="radio" name="4" value="c"> When the solvents are improperly disposed of, they can seep into the groundwater, causing a variety of health problems, including nervous system damage, liver damage, and cancer.
-                        <input type="radio" name="4" value="d"> When the solvents are improperly disposed of, they can seep into the groundwater--the result of the groundwater being contaminated with these solvents is a variety of health problems, including nervous system damage, liver damage, and cancer.
-                    </div>
-                    <div class="question">
-                        <p class="question-marker">5</p>
-                        <input type="radio" name="5" value="a"> NO CHANGE
-                        <input type="radio" name="5" value="b"> As a result,
-                        <input type="radio" name="5" value="c"> Although,
-                        <input type="radio" name="5" value="d"> Next,
-                    </div>
-                    <div class="question">
-                        <p class="question-marker">6</p>
-                        <p>Which choice provides the most effective response to a possible relevant counterclaim of the argument in support of the controlled studies a the Borden experimental site?</p>
-                        <input type="radio" name="6" value="a"> NO CHANGE
-                        <input type="radio" name="6" value="b"> Hazardous chemicals should be better regulated to prevent groundwater contamination.
-                        <input type="radio" name="6" value="c"> Traditional laboratory experiments still provide plenty of useful information.
-                        <input type="radio" name="6" value="d"> The researchers remain aware that field studies carry greater risk than laboratory studies, so the risks of each study are carefully examined before any study proceeds.
-                    </div>
-                    <div class="question">
-                        <p class="question-marker">7</p>
-                        <input type="radio" name="7" value="a"> NO CHANGE
-                        <input type="radio" name="7" value="b"> 1978. When they selected
-                        <input type="radio" name="7" value="c"> 1978, selecting
-                        <input type="radio" name="7" value="d"> 1978. Selecting
-                    </div>
-                    <div class="question">
-                        <p class="question-marker">8</p>
-                        <input type="radio" name="8" value="a"> NO CHANGE
-                        <input type="radio" name="8" value="b"> while also allowing
-                        <input type="radio" name="8" value="c"> plus also allowed
-                        <input type="radio" name="8" value="d"> and allowed
-                    </div>
-                    <div class="question">
-                        <p class="question-marker">9</p>
-                        <input type="radio" name="9" value="a"> NO CHANGE
-                        <input type="radio" name="9" value="b"> less uniform and predictable than
-                        <input type="radio" name="9" value="c"> less uniform, and predictable than
-                        <input type="radio" name="9" value="d"> less uniform and predictable than,
-                    </div>
-                    <div class="question">
-                        <p class="question-marker">10</p>
-                        <input type="radio" name="10" value="a"> NO CHANGE
-                        <input type="radio" name="10" value="b"> worshipped as
-                        <input type="radio" name="10" value="c"> recognized as being
-                        <input type="radio" name="10" value="d"> hailed as
-                    </div>
-                    <div class="question">
-                        <p class="question-marker">11</p>
-                        <p>At this point, the author wants to add an example of one of the technologies tested at the Borden site. Which choice best accomplishes this goal?</p>
-                        <input type="radio" name="11" value="a"> The Waterloo barrier, a vertical treatment wall that can be inserted into the ground to disrupt the flow of pollutants and allow contaminants to be removed, is one such innovation that has shown promise here.
-                        <input type="radio" name="11" value="b"> Many of the procedures used to contain chemicals at the Borden site are now in use in industrial sites around the world.
-                        <input type="radio" name="11" value="c"> Edward Sudicky, a professor at the University of Waterloo, published a paper detailing the results of decades worth of experiments conducted by academics from across the globe.
-                        <input type="radio" name="11" value="d"> In 1988, a group of universities in Canada and the United States established a University Consortium Solvents-in-Groundwater Research Program to run these studies.
-                    </div>
-                </form>
+                </div>
             </div>
         </div>
-        <!-- END OF CONTENT ^^^ABOVE CAN BE A CONTAINER -->
-        <div class="footer">
-            <h1><strong>END OF SECTION</strong></h1>
+        <!--END OF CONTENT-->
+        <!--BEGINNING OF FOOTER-->
+        <div class="footer text-center">
+            <h5>SECTION END</h5>
         </div>
     </div>
+    <!--END OF FOOTER-->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 </body>
 
 </html>
