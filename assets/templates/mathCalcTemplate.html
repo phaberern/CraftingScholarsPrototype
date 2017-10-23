@@ -3,10 +3,14 @@
 
 <head>
     <!-- Required meta tags -->
+    <title>Crafting Scholars Prototype</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Vollkorn" rel="stylesheet">
+    <!-- Custom --> 
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 
@@ -29,9 +33,10 @@
                 </li>
             </ul>
             <div class="section-intro text-center">
-                <img id="crafting-scholars-logo" src="../img/craftingScholarsLogo.png" alt="craftingScholarsLogo">
+                <a href="../../index.html"><img id="crafting-scholars-logo" src="../img/craftingScholarsLogo.png" alt="craftingScholarsLogo"></a>
                 <h1 class="section-title">Math With Calculator</h1>
                 <p>25 MINUTES, 20 QUESTIONS</p>
+                <p id="timer" class="text-right"></p>
                 <hr>
                 <h5>DIRECTIONS</h5>
                 <p>For questions 1-30, solve each problem, choose the best answer from the choices provided. For questions 31-38, solve the problem and enter your answer in using the drop down list. Please refer to the directions before question 31 on how to enter your answers in the grid. You may use any available space in your test booklet for scratch work.</p>
@@ -57,103 +62,101 @@
                         <div class="section-questions">
                             <ol>
                                 <li>
-                                    <p>A musician has a new song available for downloading or streaming. The musician earns $0.09 each time the song is downloaded and $0.002 each time the song is streamed. Which of the following expressions represents the amount, in dollars, that the musician earns if the song is downloaded <em>d</em> times and streamed <em>s</em> times?</p>
-                                    <input type="radio" name="q1" value="a"> 0.002<em>d</em> + 0.09<em>s</em>
+                                    A musician has a new song available for downloading or streaming. The musician earns $0.09 each time the song is downloaded and $0.002 each time the song is streamed. Which of the following expressions represents the amount, in dollars, that the musician earns if the song is downloaded <em>d</em> times and streamed <em>s</em> times?<br>
+                                    <input type="radio" name="q1" value="a"> A.) 0.002<em>d</em> + 0.09<em>s</em>
                                     <br>
-                                    <input type="radio" name="q1" value="b"> 0.002<em>d</em> - 0.09<em>s</em>
+                                    <input type="radio" name="q1" value="b"> B.) 0.002<em>d</em> - 0.09<em>s</em>
                                     <br>
-                                    <input type="radio" name="q1" value="c"> 0.09<em>d</em> + 0.002<em>s</em>
+                                    <input type="radio" name="q1" value="c"> C.) 0.09<em>d</em> + 0.002<em>s</em>
                                     <br>
-                                    <input type="radio" name="q1" value="d"> 0.09<em>d</em> - 0.002<em>s</em>
-                                    <br>
-                                </li>
-                                <li>
-                                    <p>A quality control manager at a factory selects 7 lightbulbs at random for inspection out of every 400 lightbulbs produced. At this rate, how many lightbulbs will be inspected if the factory produces 20,000 lightbulbs?</p>
-                                    <input type="radio" name="q2" value="a"> 300
-                                    <br>
-                                    <input type="radio" name="q2" value="b"> 350
-                                    <br>
-                                    <input type="radio" name="q2" value="c"> 400
-                                    <br>
-                                    <input type="radio" name="q2" value="d"> 450
+                                    <input type="radio" name="q1" value="d"> D.) 0.09<em>d</em> - 0.002<em>s</em>
                                     <br>
                                 </li>
                                 <li>
-                                    <p><em>l</em> = 24 + 3.5<em>m</em></p>
-                                    <p>One end of a spring is attached to a ceiling. When an object of mass <em>m</em> kilograms is attached to the other end of the spring, the spring stretches to a length of <em>l</em> centimeters as shown in the equation above. What is <em>m</em> when <em>l</em> is 73 ?</p>
-                                    <input type="radio" name="q3" value="a"> 14
+                                    A quality control manager at a factory selects 7 lightbulbs at random for inspection out of every 400 lightbulbs produced. At this rate, how many lightbulbs will be inspected if the factory produces 20,000 lightbulbs?<br>
+                                    <input type="radio" name="q2" value="a"> A.) 300
                                     <br>
-                                    <input type="radio" name="q3" value="b"> 27.7
+                                    <input type="radio" name="q2" value="b"> B.) 350
                                     <br>
-                                    <input type="radio" name="q3" value="c"> 73
+                                    <input type="radio" name="q2" value="c"> C.) 400
                                     <br>
-                                    <input type="radio" name="q3" value="d"> 279.5
-                                    <br>
-                                </li>
-                                <p><strong>Questions 4 and 5 refer to the following information</strong></p>
-                                <p>The amount of money a performer earns is directly proportional to the number of people attending the performance. The performer earns $120 at a performance where 8 people attend.</p>
-                                <li>
-                                    <p>How much money will the performer earn when 20 people attend a performance?</p>
-                                    <input type="radio" name="q4" value="a"> $960
-                                    <br>
-                                    <input type="radio" name="q4" value="b"> $480
-                                    <br>
-                                    <input type="radio" name="q4" value="c"> $300
-                                    <br>
-                                    <input type="radio" name="q4" value="d"> $240
+                                    <input type="radio" name="q2" value="d"> D.) 450
                                     <br>
                                 </li>
                                 <li>
-                                    <p>The performer uses 43% of the money earned to pay the costs involved in putting on each performance. The rest of the money earned is the performer’s profit. What is the profit the performer makes at a performance where 8 people attend?</p>
-                                    <input type="radio" name="q5" value="a"> $51.60
+                                    <em>l</em> = 24 + 3.5<em>m</em>
+                                    <br> One end of a spring is attached to a ceiling. When an object of mass <em>m</em> kilograms is attached to the other end of the spring, the spring stretches to a length of <em>l</em> centimeters as shown in the equation above. What is <em>m</em> when <em>l</em> is 73 ?<br>
+                                    <input type="radio" name="q3" value="a"> A.) 14
                                     <br>
-                                    <input type="radio" name="q5" value="b"> $57.00
+                                    <input type="radio" name="q3" value="b"> B.) 27.7
                                     <br>
-                                    <input type="radio" name="q5" value="c"> $68.40
+                                    <input type="radio" name="q3" value="c"> C.) 73
                                     <br>
-                                    <input type="radio" name="q5" value="d"> $77.00
+                                    <input type="radio" name="q3" value="d"> D.) 279.5
+                                    <br>
+                                </li>
+                                <strong>Questions 4 and 5 refer to the following information</strong><br> 
+                                <li>
+                                    The amount of money a performer earns is directly proportional to the number of people attending the performance. The performer earns $120 at a performance where 8 people attend. How much money will the performer earn when 20 people attend a performance?<br>
+                                    <input type="radio" name="q4" value="a"> A.) $960
+                                    <br>
+                                    <input type="radio" name="q4" value="b"> B.) $480
+                                    <br>
+                                    <input type="radio" name="q4" value="c"> C.) $300
+                                    <br>
+                                    <input type="radio" name="q4" value="d"> D.) $240
                                     <br>
                                 </li>
                                 <li>
-                                    <p>When 4 times the number <em>x</em> is added to 12, the result is 8. What number results when 2 times <em>x</em> is added to 7 ?</p>
-                                    <input type="radio" name="q6" value="a"> -1
+                                    The performer uses 43% of the money earned to pay the costs involved in putting on each performance. The rest of the money earned is the performer’s profit. What is the profit the performer makes at a performance where 8 people attend?<br>
+                                    <input type="radio" name="q5" value="a"> A.) $51.60
                                     <br>
-                                    <input type="radio" name="q6" value="b"> 5
+                                    <input type="radio" name="q5" value="b"> B.) $57.00
                                     <br>
-                                    <input type="radio" name="q6" value="c"> 8
+                                    <input type="radio" name="q5" value="c"> C.) $68.40
                                     <br>
-                                    <input type="radio" name="q6" value="d"> 9
-                                    <br>
-                                </li>
-                                <li>
-                                    <p><em>y</em> = <em>x</em><sup>2</sup> -6<em>x</em> + 8</p>
-                                    <p>The equation above represents a parabola in the
-                                        <em>xy</em>-plane. Which of the following equivalent forms of the equation displays the <em>x</em>-intercepts of the parabola as constants or coefficients?</p>
-                                    <input type="radio" name="q7" value="a"> <em>y</em> - 8 = <em>x</em><sup>2</sup> - 6<em>x</em>
-                                    <br>
-                                    <input type="radio" name="q7" value="b"> <em>y</em> + 1 = (<em>x</em> - 3)<sup>2</sup>
-                                    <br>
-                                    <input type="radio" name="q7" value="c"> <em>y</em> = <em>x</em>(<em>x</em> - 6) + 8
-                                    <br>
-                                    <input type="radio" name="q7" value="d"> <em>y</em> = (<em>x</em> - 2)(<em>x</em> - 4)
+                                    <input type="radio" name="q5" value="d"> D.) $77.00
                                     <br>
                                 </li>
                                 <li>
-                                    <p>In a video game, each player starts the game with
-                                        <em>k</em> points and loses 2 points each time a task is not completed. If a player who gains no additional points and fails to complete 100 tasks has a score of 200 points, what is the value of <em>k</em> ?</p>
-                                    <input type="radio" name="q8" value="a"> 0
+                                    When 4 times the number <em>x</em> is added to 12, the result is 8. What number results when 2 times <em>x</em> is added to 7 ?<br>
+                                    <input type="radio" name="q6" value="a"> A.) -1
                                     <br>
-                                    <input type="radio" name="q8" value="b"> 150
+                                    <input type="radio" name="q6" value="b"> B.) 5
                                     <br>
-                                    <input type="radio" name="q8" value="c"> 250
+                                    <input type="radio" name="q6" value="c"> C.) 8
                                     <br>
-                                    <input type="radio" name="q8" value="d"> 400
+                                    <input type="radio" name="q6" value="d"> D.) 9
                                     <br>
                                 </li>
                                 <li>
-                                    <p>A coastal geologist estimates that a certain country’s beaches are eroding at a rate of 1.5 feet per year. According to the geologist’s estimate, how long will it take, in years, for the country’s beaches to erode by 21 feet?</p>
+                                    <em>y</em> = <em>x</em><sup>2</sup> -6<em>x</em> + 8<br> The equation above represents a parabola in the
+                                    <em>xy</em>-plane. Which of the following equivalent forms of the equation displays the <em>x</em>-intercepts of the parabola as constants or coefficients?<br>
+                                    <input type="radio" name="q7" value="a"> A.) <em>y</em> - 8 = <em>x</em><sup>2</sup> - 6<em>x</em>
+                                    <br>
+                                    <input type="radio" name="q7" value="b"> B.) <em>y</em> + 1 = (<em>x</em> - 3)<sup>2</sup>
+                                    <br>
+                                    <input type="radio" name="q7" value="c"> C.) <em>y</em> = <em>x</em>(<em>x</em> - 6) + 8
+                                    <br>
+                                    <input type="radio" name="q7" value="d"> D.) <em>y</em> = (<em>x</em> - 2)(<em>x</em> - 4)
+                                    <br>
+                                </li>
+                                <li>
+                                    In a video game, each player starts the game with
+                                    <em>k</em> points and loses 2 points each time a task is not completed. If a player who gains no additional points and fails to complete 100 tasks has a score of 200 points, what is the value of <em>k</em> ?<br>
+                                    <input type="radio" name="q8" value="a"> A.) 0
+                                    <br>
+                                    <input type="radio" name="q8" value="b"> B.) 150
+                                    <br>
+                                    <input type="radio" name="q8" value="c"> C.) 250
+                                    <br>
+                                    <input type="radio" name="q8" value="d"> D.) 400
+                                    <br>
+                                </li>
+                                <li>
+                                    A coastal geologist estimates that a certain country’s beaches are eroding at a rate of 1.5 feet per year. According to the geologist’s estimate, how long will it take, in years, for the country’s beaches to erode by 21 feet?<br>
                                     <select name="q9">
-                                        <option disable selected value> </option>
+                                        <option label=" "></option>
                                         <option value=".">.</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
@@ -166,7 +169,7 @@
                                         <option value="9">9</option>
                                     </select>
                                     <select name="q9">
-                                        <option disable selected value> </option>
+                                        <option label=" "></option>
                                         <option value="/">/</option>
                                         <option value=".">.</option>
                                         <option value="0">0</option>
@@ -181,7 +184,7 @@
                                         <option value="9">9</option>
                                     </select>
                                     <select name="q9">
-                                        <option disable selected value> </option>
+                                        <option label=" "></option>
                                         <option value="/">/</option>
                                         <option value=".">.</option>
                                         <option value="0">0</option>
@@ -196,7 +199,7 @@
                                         <option value="9">9</option>
                                     </select>
                                     <select name="q9">
-                                        <option disable selected value> </option>
+                                        <option label=" "></option>
                                         <option value=".">.</option>
                                         <option value="0">0</option>
                                         <option value="1">1</option>
@@ -211,9 +214,9 @@
                                     </select>
                                 </li>
                                 <li>
-                                    <p>If <em>h</em> hours and 30 minutes is equal to 450 minutes, what is the value of <em>h</em> ?</p>
+                                    If <em>h</em> hours and 30 minutes is equal to 450 minutes, what is the value of <em>h</em> ?<br>
                                     <select name="q10">
-                                        <option disable selected value> </option>
+                                        <option label=" "></option>
                                         <option value=".">.</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
@@ -226,7 +229,7 @@
                                         <option value="9">9</option>
                                     </select>
                                     <select name="q10">
-                                        <option disable selected value> </option>
+                                        <option label=" "></option>
                                         <option value="/">/</option>
                                         <option value=".">.</option>
                                         <option value="0">0</option>
@@ -241,7 +244,7 @@
                                         <option value="9">9</option>
                                     </select>
                                     <select name="q10">
-                                        <option disable selected value> </option>
+                                        <option label=" "></option>
                                         <option value="/">/</option>
                                         <option value=".">.</option>
                                         <option value="0">0</option>
@@ -256,7 +259,7 @@
                                         <option value="9">9</option>
                                     </select>
                                     <select name="q10">
-                                        <option disable selected value> </option>
+                                        <option label=" "></option>
                                         <option value=".">.</option>
                                         <option value="0">0</option>
                                         <option value="1">1</option>
@@ -278,8 +281,9 @@
         </div>
         <!--END OF CONTENT-->
         <!--BEGINNING OF FOOTER-->
+        <hr>
         <div class="footer text-center">
-            <h5>SECTION END</h5>
+            <button id="done-button">DONE</button>
         </div>
     </div>
     <!--END OF FOOTER-->
@@ -288,6 +292,8 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <!-- CUSTOM -->
+    <script src="../js/math.js" type="text/javascript"></script>
 </body>
 
 </html>

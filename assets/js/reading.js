@@ -1,103 +1,104 @@
-$(document).ready(function(){
-	$("#question-nav").hide();
-	//variables for tracking point of interest events
-	var currQuestion = 0;
+$("document").ready(function(){
+	//global variables for timer
+	var testTime = 2100;//35 minutes = 2100 seconds
+	var counter = 2100;//set equal to testTime
+	var timerId = null;//to clear interval and stop timer
 
-	//variables for questions and answers
-	var questionArray = [{
-		question : "Which choice best summarizes the passage?",
-		choices : ["A character describes his dislike for his new job and considers the reasons why.","Two characters employed in the same office become increasingly competitive.","A young man regrets privately a choice that he defends publicly.","A new employee experiences optimism, then frustration, and finally despair."],
-		answer : 1
-	},{
-		question : "The main purpose of the opening sentence of the passage is to",
-		choices : ["establish the narrator’s perspective on a controversy.", "provide context useful in understanding the narrator’s emotional state.", "offer a symbolic representation of Edward Crimsworth’s plight.", "contrast the narrator’s good intentions with his malicious conduct."],
-		answer : 2
-	},{
-		question : "During the course of the first paragraph, the narrator’s focus shifts from",
-		choices : ["recollection of past confidence to acknowledgment of present self-doubt.", "reflection on his expectations of life as a tradesman to his desire for another job.", "generalization about job dissatisfaction to the specifics of his own situation.", "evaluation of factors making him unhappy to identification of alternatives."],
-		answer : 3
-	},{
-		question : "The references to “shade” and “darkness” at the end of the first paragraph mainly have which effect?",
-		choices : ["They evoke the narrator’s sense of dismay.", "They reflect the narrator’s sinister thoughts.", "They capture the narrator’s fear of confinement.", "They reveal the narrator’s longing for rest."],
-		answer : 4
-	},{
-		question : "The passage indicates that Edward Crimsworth’s behavior was mainly caused by his",
-		choices : ["impatience with the narrator’s high spirits.", "scorn of the narrator’s humble background.", "indignation at the narrator’s rash actions.", "jealousy of the narrator’s apparent superiority."],
-		answer : 5
-	},{
-		question : "The passage indicates that when the narrator began working for Edward Crimsworth, he viewed Crimsworth as a",
-		choices : ["harmless rival.", "sympathetic ally.", "perceptive judge.", "demanding mentor."],
-		answer : 6
-	},{
-		question : "Which choice provides the best evidence for the answer to the previous question?",
-		choices : ["Lines 28-31 (“the antipathy... life”)", "Lines 38-40 (“My southern... irritated him”)", "Lines 54-56 (“Day... slumber”)", "Lines 61-62 (“I had... brother”)"],
-		answer : 7
-	},{
-		question : "At the end of the second paragraph, the comparisons of abstract qualities to a lynx and a snake mainly have the effect of",
-		choices : ["contrasting two hypothetical courses of action.", "conveying the ferocity of a resolution.", "suggesting the likelihood of an altercation.", "illustrating the nature of an adversarial relationship."],
-		answer : 8
-	},{
-		question : "The passage indicates that, after a long day of work, the narrator sometimes found his living quarters to be",
-		choices : ["treacherous.", "dreary.", "predictable.", "intolerable."],
-		answer : 9
-	},{
-		question : "Which choice provides the best evidence for the answer to the previous question?",
-		choices : ["Lines 17-21 (“I should... scenes”)", "Lines 21-23 (“I should... lodgings”)", "Lines 64-67 (“Thoughts... phrases”)", "Lines 68-74 (“I walked... gleam”)"],
-		answer : 10
-	}];
-
-	//navigating through questions
-	$("#show-questions").on("click", function(){
-		this.remove(); 
-		$("#question-nav").show();
-		loadQuestion(currQuestion);
-	});
-
-	function loadQuestion(currQuestion){
-
-		var question = questionArray[currQuestion];
-
-		$("#question-number").html((currQuestion + 1));
-
-		$("#question").html(question.question);
-		};
-
-		/*//***********************************LINE NUMBERING***************************************
-		// default line height 
-		var refHeight = 18;
+	var checkedInputs = [];//keep track of every input that is checked
 	
-		// function declaration
-		var computeLines = function(){
-			
-			//remove previous numbers
-			$(".number").remove();
-			var count = 1; 
-			
-			//loop through paragraphs
-			$("#passage p").each(function(index){
-				
-					//get number of lines in paragraph
-					var position = $(this).position();
-					var paragraphHeight = $(this).height();
-					var lines = (paragraphHeight / refHeight);
-					var lineHeight = (paragraphHeight / lines);
-					
-					//loop through lines
-					for(var i = position.top; i < (position.top + paragraphHeight); i+= lineHeight){
-						
-							//add the numbering paragraph at absolute position
-							$("<p>", {class: "number"}).text(count++).css("top", i+5).insertBefore($(this));;
-							console.log(i);
-							
-						}
-						//add margin to allow space for numbering
-						$(this).css("margin-left", "10px");
-				});
+	var multipleChoiceAnswers = ["a","a","a","a","a","a","a","a"];
+
+	
+	//***************************** MAIN method to kick things off ****************
+
+		$("#timer").text(convertSeconds(counter));	
+		countdown();
+		monitorQuestions();	
+	
+	$("#done-button").on("click",function(){
+		clearInterval(timerId);
+		runReport();
+		});
+		
+	//***************************** function delcarations *************************
+	
+	//functions for the timer______________________________________________________
+	function countdown(){
+		timerId = setInterval(function(){
+			counter--;
+			$("#timer").text(convertSeconds(counter));
+			}, 1000);
+		};
+	function convertSeconds(inputSeconds){
+		var minutes = Math.floor(inputSeconds/60);
+		var seconds = inputSeconds - (minutes * 60);
+		//return calculation
+		return(prettifyRemainingTime(minutes, "0", 2) + ":" + prettifyRemainingTime(seconds, "0", 2));
+		};
+	function prettifyRemainingTime(string, pad, length){
+		return(new Array(length+1).join(pad)+string).slice(-length);
+		};	
+		
+	//main function to run the report______________________________________________
+	function runReport(){
+		checkAnswers();
+		calculateTestTime();
+		calculateCheckedInputs();
+		
+		};
+	//functions for checking answers_______________________________________________
+	function checkAnswers(){
+		//variables to hold information to identify what answers were correct and incorrect
+		var correctMultipleChoice = [];
+		var incorrectMultipleChoice = [];
+		var correctFreeResponse = [];
+		var incorrectFreeResponse = [];
+		
+		//select multiple choice answers
+		var $studentMultipleChoiceAnswers = $("input:checked");
+		//cycle through the multiple choice answers and check for correct or incorrect and update variables
+		for(i = 0; i < $studentMultipleChoiceAnswers.length; i++){
+			if(multipleChoiceAnswers[i] === $studentMultipleChoiceAnswers[i].value){
+				correctMultipleChoice.push($studentMultipleChoiceAnswers[i].name);
+				}else{
+					incorrectMultipleChoice.push($studentMultipleChoiceAnswers[i].name +":"+ $studentMultipleChoiceAnswers[i].value);
+					};
+			};
+		//select free response answers
+		var $studentFreeResponseAnswers = $("select");
+		for(i = 0; i < $studentFreeResponseAnswers.length; i++){
+			if(freeResponseAnswers[i] === $studentFreeResponseAnswers[i].value){
+				correctFreeResponse.push($studentFreeResponseAnswers[i].name);
+				}else{
+					incorrectFreeResponse.push($studentFreeResponseAnswers[i].name +":"+ $studentFreeResponseAnswers[i].value);
+					};
+			};
+		//print correct answers
+		console.log("correct multiple choice answers:");
+		for(i = 0; i < correctMultipleChoice.length; i++){
+			console.log(correctMultipleChoice[i]);
+			};
+		//print incorrect answers
+		console.log("incorrect multiple choice answers answers:");
+		for(i = 0; i < incorrectMultipleChoice.length; i++){
+			console.log(incorrectMultipleChoice[i]);
+			};
 		};
 		
-		$(window).resize(computeLines);
-		computeLines();
-	
-		//***********************************END OF LINE NUMBERING***************************************
-*/
-});//END OF DOC READY FUNCTION
+		function monitorQuestions(){
+			$("input").on("click", function(){
+				checkedInputs.push(this.name);
+				});
+			};
+		function calculateTestTime(){
+			var timeUsed = convertSeconds(testTime - counter);	
+			console.log("Student took " + timeUsed + " to complete this section");
+			};
+		function calculateCheckedInputs(){
+			var counts = {};
+			checkedInputs.forEach(function(x){
+				counts[x] = (counts[x] || 0)+1;
+				});	
+			console.log(counts);
+			};
+	});

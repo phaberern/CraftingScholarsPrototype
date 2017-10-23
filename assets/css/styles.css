@@ -10,12 +10,20 @@
 	width: 300px;
 	height: auto;
 }
-input[type=radio]{
-	background-color: black;
-}
 .section-intro li{
 	text-align: left;
 }
 .section-questions li{
 	margin-bottom: 10px;
 }
+
+#start-button{
+	display: inline;
+	}
+.question-marker{
+	background-color: gray;
+	color: white;
+	margin: 2px;
+	padding-left: 4px;
+	padding-right: 4px;
+	}
