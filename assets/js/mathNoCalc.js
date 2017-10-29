@@ -1,15 +1,13 @@
 $("document").ready(function(){
 	//global variables for timer
-	var testTime = 1500;//25 minutes = 1500 seconds
-	var counter = 1500;//set equal to testTime
+	var testTime = 10;//25 minutes = 1500 seconds
+	var counter = 10;//set equal to testTime
 	var timerId = null;//to clear interval and stop timer
 
 	var checkedInputs = [];//keep track of every input that is checked
 	
-	var multipleChoiceAnswers = ["c","b","a"];
+	var multipleChoiceAnswers = ["a","a","a","a","a","a","a","a"];
 	var freeResponseAnswers = ["1","1","1","1","1","1","1","1"];
-	var freeResponseAnswers1 = ["3","6","9"];
-	var freeResponseAnswers2 = ["17"]; 
 
 	
 	//***************************** MAIN method to kick things off ****************

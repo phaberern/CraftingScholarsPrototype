@@ -1,4 +1,5 @@
 $('document').ready(function(){
+		
 	//on click, redirect 
 	$("#start-button").on("click",function(){
 		var selection = $("#sat-section-selection").val();
@@ -18,7 +19,8 @@ $('document').ready(function(){
 				break;
 			default: alert("you screwed up");
 		
-			};
+			};			
 		
 		});
+	
 });

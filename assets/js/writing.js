@@ -6,7 +6,7 @@ $("document").ready(function(){
 
 	var checkedInputs = [];//keep track of every input that is checked
 	
-	var multipleChoiceAnswers = ["a","a","a","a","a","a","a","a"];
+	var multipleChoiceAnswers = ["b","b","a","a","d","d","b","d"];
 
 	
 	//***************************** MAIN method to kick things off ****************
@@ -26,6 +26,11 @@ $("document").ready(function(){
 	function countdown(){
 		timerId = setInterval(function(){
 			counter--;
+			if(counter < 0){
+				runReport();
+				clearInterval(timerId);
+				alert("Time is up!");
+				}	
 			$("#timer").text(convertSeconds(counter));
 			}, 1000);
 		};
@@ -101,4 +106,6 @@ $("document").ready(function(){
 				});	
 			console.log(counts);
 			};
+		
+
 	});

@@ -6,7 +6,7 @@ $("document").ready(function(){
 
 	var checkedInputs = [];//keep track of every input that is checked
 	
-	var multipleChoiceAnswers = ["a","a","a","a","a","a","a","a"];
+	var multipleChoiceAnswers = ["a","b","c","a","d","b","d","d","b","d"];
 
 	
 	//***************************** MAIN method to kick things off ****************
@@ -26,6 +26,11 @@ $("document").ready(function(){
 	function countdown(){
 		timerId = setInterval(function(){
 			counter--;
+			if(counter < 0){
+				runReport();
+				clearInterval(timerId);
+				alert("Time is up!");
+				}	
 			$("#timer").text(convertSeconds(counter));
 			}, 1000);
 		};
@@ -51,8 +56,6 @@ $("document").ready(function(){
 		//variables to hold information to identify what answers were correct and incorrect
 		var correctMultipleChoice = [];
 		var incorrectMultipleChoice = [];
-		var correctFreeResponse = [];
-		var incorrectFreeResponse = [];
 		
 		//select multiple choice answers
 		var $studentMultipleChoiceAnswers = $("input:checked");
@@ -62,15 +65,6 @@ $("document").ready(function(){
 				correctMultipleChoice.push($studentMultipleChoiceAnswers[i].name);
 				}else{
 					incorrectMultipleChoice.push($studentMultipleChoiceAnswers[i].name +":"+ $studentMultipleChoiceAnswers[i].value);
-					};
-			};
-		//select free response answers
-		var $studentFreeResponseAnswers = $("select");
-		for(i = 0; i < $studentFreeResponseAnswers.length; i++){
-			if(freeResponseAnswers[i] === $studentFreeResponseAnswers[i].value){
-				correctFreeResponse.push($studentFreeResponseAnswers[i].name);
-				}else{
-					incorrectFreeResponse.push($studentFreeResponseAnswers[i].name +":"+ $studentFreeResponseAnswers[i].value);
 					};
 			};
 		//print correct answers
