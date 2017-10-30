@@ -6,13 +6,11 @@ $("document").ready(function() {
 
     var checkedInputs = []; //keep track of every input that is checked
 
-    var multipleChoiceAnswers = ["c", "b", "a"];
+    var multipleChoiceAnswers = ["c", "b", "a","c","c","b","d","d"];
     var freeResponseAnswers = [
-    	["3", "6", "9"],
-    	["17"]
+    	["14"],
+    	["7"]
     ];
-    //var freeResponseAnswers1 = ["3", "6", "9"];
-    //var freeResponseAnswers = ["17"];
 
 
     //***************************** MAIN method to kick things off ****************
@@ -96,14 +94,6 @@ $("document").ready(function() {
                 };
             };
         };
-
-        /*if(freeResponseAnswers[i] === $studentFreeResponseAnswers[i].value){
-        	correctFreeResponse.push($studentFreeResponseAnswers[i].name);
-        	}else{
-        		incorrectFreeResponse.push($studentFreeResponseAnswers[i].name +":"+ $studentFreeResponseAnswers[i].value);
-        		};*/
-
-
         //print correct answers
         console.log("correct multiple choice answers:");
         for (i = 0; i < correctMultipleChoice.length; i++) {
