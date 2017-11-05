@@ -95,4 +95,60 @@ $("document").ready(function(){
 				});	
 			console.log(counts);
 			};
+
+////////////////////////////////////////////////////////
+
+			(function() {
+			    var theQuestions = (function() {
+			        var theFile = ['jsonfile.json'];
+
+			        		loopQuestions = function() {
+			                //determines if the owner is a new owner or not, passes them to the newMember function or updateMember function
+			                for (var k = 0; k < 1; k++) {
+			                    $.getJSON(theFile[k], function(data) {
+			                        for (var i = 0; i < data.questions.length; i++) {
+			                            //define data to be logged
+			                            // console.log(data.questions[i].question);
+			                            // console.log(data.questions[i].answers-choices);
+			                            $('.section-questions').append('<p>' + data.questions[i].question + '</p>');
+			                            for(var j = 0; j < data.questions[i].answerschoices.length; j++) {
+			                            	// console.log(data.questions[i].answerschoices[j]);
+			                            	var value = j;
+																			switch(value) {
+																			    case 0:
+																			        value = 'a';
+																			        break;
+																			    case 1:
+																			        value = 'b';
+																			        break;
+																			    case 2:
+																			        value = 'c';
+																			        break;
+																			    case 3:
+																			        value = 'd';
+																			        break;
+																			    default:
+																			        //do nothing
+																			}
+			                            	$('.section-questions').append('<input type="radio" name="q' + (i+1) + '" value="' + value + '"><li>' + data.questions[i].answerschoices[j] + '</li>')
+			                            }
+			                            // console.log(data);
+			                        }
+			                    });
+			                }
+			            }
+			        
+
+			        return {
+			            first: loopQuestions
+			        };
+			    })();
+			    theQuestions.first();
+
+			})();
+
+
+
+
+
 	});

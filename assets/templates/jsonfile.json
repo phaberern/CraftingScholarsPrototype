@@ -1,0 +1,9 @@
+{
+    "questions": [{
+        "question": "Which choice best summarizes the passage?",
+        "answerschoices": ["A.) A character describes his dislike for his new job and considers the reasons why.", "B.) Two characters employed in the same office become increasingly competitive.", "C.) A young man regrets privately a choice that he defends publicly.", "D.) A new employee experiences optimism, then frustration, and finally despair." ]
+    },{
+        "question": "The main purpose of the opening sentence of the passage is to",
+        "answerschoices": ["A.) establish the narrator’s perspective on a controversy.", "B.) provide context useful in understanding the narrator’s emotional state.", "C.) offer a symbolic representation of Edward Crimsworth’s plight. ", "D.) contrast the narrator’s good intentions with his malicious conduct. " ]
+    }]
+}
