@@ -80,7 +80,12 @@ $("document").ready(function(){
 		};
 
 		function monitorQuestions(){
+			// $('document').on('click', 'input', function() {
+			// 	console.log('input click');
+			// 	checkedInputs.push(this.name);
+			// });
 			$("input").on("click", function(){
+				console.log('input');
 				checkedInputs.push(this.name);
 				});
 			};
@@ -95,60 +100,63 @@ $("document").ready(function(){
 				});
 			console.log(counts);
 			};
+	});
+
+
 
 ////////////////////////////////////////////////////////
 
-			(function() {
-			    var theQuestions = (function() {
-			        var theFile = ['jsonfile.json'];
+//this is a revealing modular pattern. it keeps all of the variables and functions in scope so nothing leaks out onto the global scope of your webpage.
+(function() {
 
-			        		loopQuestions = function() {
-			                //determines if the owner is a new owner or not, passes them to the newMember function or updateMember function
-			                for (var k = 0; k < 1; k++) {
-			                    $.getJSON(theFile[k], function(data) {
-			                        for (var i = 0; i < data.questions.length; i++) {
-			                            //define data to be logged
-			                            // console.log(data.questions[i].question);
-			                            // console.log(data.questions[i].answers-choices);
-			                            $('.order-questions-list').append('<li><p>' + data.questions[i].question + '</p></li>');
-			                            for(var j = 0; j < data.questions[i].answerschoices.length; j++) {
-			                            	// console.log(data.questions[i].answerschoices[j]);
-			                            	var value = j;
-																			switch(value) {
-																			    case 0:
-																			        value = 'a';
-																			        break;
-																			    case 1:
-																			        value = 'b';
-																			        break;
-																			    case 2:
-																			        value = 'c';
-																			        break;
-																			    case 3:
-																			        value = 'd';
-																			        break;
-																			    default:
-																			        //do nothing
-																			}
-			                            	$('.order-questions-list').append('<input type="radio" name="q' + (i+1) + '" value="' + value + '"> ' + data.questions[i].answerschoices[j] + '<br>');
-			                            }
-			                            // console.log(data);
-			                        }
-			                    });
-			                }
-			            }
+    var theQuestions = (function() {
+        var theFile = ['jsonfile.json'];
 
-
-			        return {
-			            first: loopQuestions
-			        };
-			    })();
-			    theQuestions.first();
-
-			})();
-
-
-
-
-
-	});
+        		loopQuestions = function() {
+                //for loop that reads the number of json files in the array 'theFile', so if you have multiple json files and want to keep them separate, this is useful
+                //if you only know you'll loop through one json file, you can skip this in the future.
+                for (var k = 0; k < 1; k++) {
+                	//get the json file 'jsonfile.json' -- ideally rename this to something more specific than jsonfile.json
+                    $.getJSON(theFile[k], function(data) {
+                    	//for loop to loop through the number of questions in the jsonfile.json
+                        for (var i = 0; i < data.questions.length; i++) {
+                        	//cache the question variable to have cleaner js
+                        	var question = data.questions[i].question;
+                        	//append the li to the ol that has the class order-questions-list
+                            $('.order-questions-list').append('<li><p>' + question + '</p></li>');
+                            //for loop to loop through the answer choices to each question
+                            for(var j = 0; j < data.questions[i].answerschoices.length; j++) {
+                            	//create a value for j
+                            	var value = j,
+                            			answerChoice = data.questions[i].answerschoices[j];
+                            	//switch case to determine if the value attribute should be a, b, c, or d
+																switch(value) {
+																    case 0:
+																        value = 'a';
+																        break;
+																    case 1:
+																        value = 'b';
+																        break;
+																    case 2:
+																        value = 'c';
+																        break;
+																    case 3:
+																        value = 'd';
+																        break;
+																    default:
+																        //do nothing
+																}
+																//append the answer choice.
+                            	$('.order-questions-list').append('<input type="radio" name="q' + (i+1) + '" value="' + value + '"> ' + answerChoice + '<br>');
+                            }
+                        }
+                    });
+                }
+            }
+        //return what you want to expose. this sets init to fire the loopQuestions function
+        return {
+            init: loopQuestions
+        };
+    })(); //self invoking function, fires immediately. known as IIFE.
+    theQuestions.init(); //this calls the function to be ran.
+})();//another self invoking function, this function runs when it reads the js. not on dom read.
