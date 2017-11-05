@@ -5,23 +5,23 @@ $("document").ready(function(){
 	var timerId = null;//to clear interval and stop timer
 
 	var checkedInputs = [];//keep track of every input that is checked
-	
+
 	var multipleChoiceAnswers = ["a","b","c","a","d","b","d","d","b","d"];
 
-	
+
 	//***************************** MAIN method to kick things off ****************
 
-		$("#timer").text(convertSeconds(counter));	
+		$("#timer").text(convertSeconds(counter));
 		countdown();
-		monitorQuestions();	
-	
+		monitorQuestions();
+
 	$("#done-button").on("click",function(){
 		clearInterval(timerId);
 		runReport();
 		});
-		
+
 	//***************************** function delcarations *************************
-	
+
 	//functions for the timer______________________________________________________
 	function countdown(){
 		timerId = setInterval(function(){
@@ -30,7 +30,7 @@ $("document").ready(function(){
 				runReport();
 				clearInterval(timerId);
 				alert("Time is up!");
-				}	
+				}
 			$("#timer").text(convertSeconds(counter));
 			}, 1000);
 		};
@@ -42,21 +42,21 @@ $("document").ready(function(){
 		};
 	function prettifyRemainingTime(string, pad, length){
 		return(new Array(length+1).join(pad)+string).slice(-length);
-		};	
-		
+		};
+
 	//main function to run the report______________________________________________
 	function runReport(){
 		checkAnswers();
 		calculateTestTime();
 		calculateCheckedInputs();
-		
+
 		};
 	//functions for checking answers_______________________________________________
 	function checkAnswers(){
 		//variables to hold information to identify what answers were correct and incorrect
 		var correctMultipleChoice = [];
 		var incorrectMultipleChoice = [];
-		
+
 		//select multiple choice answers
 		var $studentMultipleChoiceAnswers = $("input:checked");
 		//cycle through the multiple choice answers and check for correct or incorrect and update variables
@@ -78,21 +78,21 @@ $("document").ready(function(){
 			console.log(incorrectMultipleChoice[i]);
 			};
 		};
-		
+
 		function monitorQuestions(){
 			$("input").on("click", function(){
 				checkedInputs.push(this.name);
 				});
 			};
 		function calculateTestTime(){
-			var timeUsed = convertSeconds(testTime - counter);	
+			var timeUsed = convertSeconds(testTime - counter);
 			console.log("Student took " + timeUsed + " to complete this section");
 			};
 		function calculateCheckedInputs(){
 			var counts = {};
 			checkedInputs.forEach(function(x){
 				counts[x] = (counts[x] || 0)+1;
-				});	
+				});
 			console.log(counts);
 			};
 
@@ -137,7 +137,7 @@ $("document").ready(function(){
 			                    });
 			                }
 			            }
-			        
+
 
 			        return {
 			            first: loopQuestions
