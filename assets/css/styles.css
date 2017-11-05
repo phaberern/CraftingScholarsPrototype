@@ -30,8 +30,14 @@
 #timer{
 	background-color: white;
 	padding: 30px;
-	position: fixed; 
+	position: fixed;
 	top: 0;
 	width:100;
 	z-index:100;
 	}
+.mark-answer-wrong{
+	text-decoration: line-through;
+}
+.mark-wrong{
+	cursor: pointer;
+}
