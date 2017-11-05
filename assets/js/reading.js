@@ -110,7 +110,7 @@ $("document").ready(function(){
 			                            //define data to be logged
 			                            // console.log(data.questions[i].question);
 			                            // console.log(data.questions[i].answers-choices);
-			                            $('.section-questions').append('<p>' + data.questions[i].question + '</p>');
+			                            $('.order-questions-list').append('<li><p>' + data.questions[i].question + '</p></li>');
 			                            for(var j = 0; j < data.questions[i].answerschoices.length; j++) {
 			                            	// console.log(data.questions[i].answerschoices[j]);
 			                            	var value = j;
@@ -130,7 +130,7 @@ $("document").ready(function(){
 																			    default:
 																			        //do nothing
 																			}
-			                            	$('.section-questions').append('<input type="radio" name="q' + (i+1) + '" value="' + value + '"><li>' + data.questions[i].answerschoices[j] + '</li>')
+			                            	$('.order-questions-list').append('<input type="radio" name="q' + (i+1) + '" value="' + value + '"> ' + data.questions[i].answerschoices[j] + '<br>');
 			                            }
 			                            // console.log(data);
 			                        }
