@@ -147,7 +147,7 @@ $("document").ready(function(){
 																        //do nothing
 																}
 																//append the answer choice.
-                            	$('.order-questions-list').append('<div class="question"><input type="radio" name="q' + (i+1) + '" value="' + value + '"><span class="answer-choice-text"> ' + answerChoice + '</span><span class="mark-wrong x-button">X</span></div>');
+                            	$('.order-questions-list').append('<div class="question"><input type="radio" name="q' + (i+1) + '" value="' + value + '"><span class="answer-choice-text"> ' + answerChoice + '</span><span class="mark-wrong">X</span></div>');
                             }
                         }
                     });
