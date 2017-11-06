@@ -149,12 +149,19 @@ $("document").ready(function(){
 																        //do nothing
 																}
 																//append the answer choice.
-                            	$('.order-questions-list').append('<input type="radio" name="q' + (i+1) + '" value="' + value + '"> ' + answerChoice + '<br>');
+                            	$('.order-questions-list').append('<div class="question"><input type="radio" name="q' + (i+1) + '" value="' + value + '"><span class="answer-choice-text"> ' + answerChoice + '</span><span class="mark-wrong x-button">X</span></div>');
                             }
                         }
                     });
-                }
+              	}
+              	strikeThroughAnswer();
             }
+
+            strikeThroughAnswer = function() {
+            	$(document).on('click', '.mark-wrong', function() {
+            		$(this).siblings().toggleClass('mark-answer-wrong');
+            	});
+            };
         //return what you want to expose. this sets init to fire the loopQuestions function
         return {
             init: loopQuestions

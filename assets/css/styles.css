@@ -35,3 +35,9 @@
 	width:100;
 	z-index:100;
 	}
+	.mark-answer-wrong {
+		text-decoration: line-through;
+	}
+	.x-button {
+		cursor: pointer;
+	}
