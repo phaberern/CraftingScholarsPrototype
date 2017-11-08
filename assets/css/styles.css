@@ -45,10 +45,13 @@
 .mark-answer-wrong {
     text-decoration: line-through;
 }
-
-.mark-wrong {
-    color: red;
+.mark-wrong{
     opacity: .4;
+}
+.mark-wrong:hover {
+    color: red;
     cursor: pointer;
-
+}
+body{
+    font-family: 'Fenix', serif;
 }
