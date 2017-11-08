@@ -83,8 +83,8 @@ $("document").ready(function() {
 
     function monitorQuestions() {
         // $('document').on('click', 'input', function() {
-        // 	console.log('input click');
-        // 	checkedInputs.push(this.name);
+        //  console.log('input click');
+        //  checkedInputs.push(this.name);
         // });
         $("input").on("click", function() {
             console.log('input');
@@ -157,7 +157,15 @@ $("document").ready(function() {
                 });
             }
             strikeThroughAnswer();
+            scrollToLineReference();
         }
+        scrollToLineReference = function() {
+            $(document).on('click', '.line-reference', function() {
+                var $question = $(this).prev();
+                var target = ($question[0].name + $question[0].value);
+                document.getElementById(target).scrollIntoView();
+            });
+        };
 
         strikeThroughAnswer = function() {
             $(document).on('click', '.mark-wrong', function() {
