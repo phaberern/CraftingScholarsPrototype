@@ -151,7 +151,11 @@ $("document").ready(function() {
                                     //do nothing
                             }
                             //append the answer choice.
-                            $('.order-questions-list').append('<div class="question"><input type="radio" name="q' + (i + 1) + '" value="' + value + '"><span class="answer-choice-text"> ' + answerChoice + '</span><sup class="mark-wrong">X</sup></div>');
+                            if (answerChoice.indexOf('Lines') >= 0) {
+                                $('.order-questions-list').append('<div class="question"><input type="radio" name="q' + (i + 1) + '" value="' + value + '"><span class="answer-choice-text"><span class="line-reference">&#9432;</span>' + answerChoice + '</span><sup class="mark-wrong">X</sup></div>');
+                            } else {
+                                $('.order-questions-list').append('<div class="question"><input type="radio" name="q' + (i + 1) + '" value="' + value + '"><span class="answer-choice-text"> ' + answerChoice + '</span><sup class="mark-wrong">X</sup></div>');
+                            }
                         }
                     }
                 });
@@ -161,7 +165,7 @@ $("document").ready(function() {
         }
         scrollToLineReference = function() {
             $(document).on('click', '.line-reference', function() {
-                var $question = $(this).prev();
+                var $question = $(this).parent().prev();
                 var target = ($question[0].name + $question[0].value);
                 document.getElementById(target).scrollIntoView();
             });
