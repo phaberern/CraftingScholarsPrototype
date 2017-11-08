@@ -37,7 +37,7 @@
     position: fixed;
     color: #21B6B3;
     bottom: 0;
-    left: 80%;
+    right: 0;
     font-size: 300%;
     opacity: .2;
 }
@@ -45,10 +45,22 @@
 .mark-answer-wrong {
     text-decoration: line-through;
 }
-
-.mark-wrong {
-    color: red;
+.mark-wrong{
     opacity: .4;
+}
+.mark-wrong:hover {
+    opacity: 1;
+    color: red;
     cursor: pointer;
-
+}
+.line-reference{
+    margin-left: 2px;
+    margin-right: 2px;
+}
+.line-reference:hover{
+    color: green;
+    cursor: pointer;
+}
+body{
+    font-family: 'Fenix', serif;
 }
