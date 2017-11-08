@@ -1,46 +1,54 @@
 #crafting-scholars-logo {
-	width: 100px;
-	height: auto;
-}
-#math-reference-chart{
-	width: 600px;
-	height: auto;
-}
-.math-question-img{
-	width: 300px;
-	height: auto;
-}
-.section-intro li{
-	text-align: left;
-}
-.section-questions li{
-	margin-bottom: 10px;
+    width: 100px;
+    height: auto;
 }
 
-#start-button{
-	display: inline;
-	}
-.question-marker{
-	background-color: gray;
-	color: white;
-	margin: 2px;
-	padding-left: 4px;
-	padding-right: 4px;
-	}
-#timer{
-	background-color: white;
-	padding: 30px;
-	position: fixed;
-	top: 0;
-	width:100;
-	z-index:100;
-	}
-	.mark-answer-wrong {
-		text-decoration: line-through;
-	}
-	.mark-answer-wrong{
-		text-decoration: line-through;
-	}
-	.mark-wrong{
-		cursor: pointer;
-	}
+#math-reference-chart {
+    width: 600px;
+    height: auto;
+}
+
+.math-question-img {
+    width: 300px;
+    height: auto;
+}
+
+.section-intro li {
+    text-align: left;
+}
+
+.section-questions li {
+    margin-bottom: 10px;
+}
+
+#start-button {
+    display: inline;
+}
+
+.question-marker {
+    background-color: gray;
+    color: white;
+    margin: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+#timer {
+    position: fixed;
+    color: #21B6B3;
+    bottom: 0;
+    left: 80%;
+    font-size: 300%;
+    opacity: .2;
+}
+
+.mark-answer-wrong {
+    text-decoration: line-through;
+}
+
+.mark-wrong {
+    color: red;
+    opacity: .4;
+    cursor: pointer;
+
+}
